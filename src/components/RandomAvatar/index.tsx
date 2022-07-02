@@ -20,7 +20,7 @@ export interface RandomAvatarProps {
   style?: React.CSSProperties;
   alt?: string;
   size: number;
-  onClick?(): React.MouseEventHandler<HTMLImageElement>;
+  onClick?(): any;
 }
 
 export const RandomAvatar: React.FC<RandomAvatarProps> = ({
