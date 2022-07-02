@@ -1,18 +1,18 @@
-import React from "react";
-import seedrandom from "seedrandom";
+import React from 'react';
+import seedrandom from 'seedrandom';
 
-import topTypeOptions from "./avatar-options/topTypeOptions.json";
-import accessoriesTypeOptions from "./avatar-options/accessoriesTypeOptions.json";
-import facialHairTypeOptions from "./avatar-options/facialHairTypeOptions.json";
-import facialHairColorOptions from "./avatar-options/facialHairColorOptions.json";
-import clotheTypeOptions from "./avatar-options/clotheTypeOptions.json";
-import eyeTypeOptions from "./avatar-options/eyeTypeOptions.json";
-import eyebrowTypeOptions from "./avatar-options/eyebrowTypeOptions.json";
-import mouthTypeOptions from "./avatar-options/mouthTypeOptions.json";
-import skinColorOptions from "./avatar-options/skinColorOptions.json";
-import hairColorTypes from "./avatar-options/hairColorTypes.json";
-import hatColorOptions from "./avatar-options/hatColorOptions.json";
-import clotheColorOptions from "./avatar-options/clotheColorOptions.json";
+import topTypeOptions from './avatar-options/topTypeOptions.json';
+import accessoriesTypeOptions from './avatar-options/accessoriesTypeOptions.json';
+import facialHairTypeOptions from './avatar-options/facialHairTypeOptions.json';
+import facialHairColorOptions from './avatar-options/facialHairColorOptions.json';
+import clotheTypeOptions from './avatar-options/clotheTypeOptions.json';
+import eyeTypeOptions from './avatar-options/eyeTypeOptions.json';
+import eyebrowTypeOptions from './avatar-options/eyebrowTypeOptions.json';
+import mouthTypeOptions from './avatar-options/mouthTypeOptions.json';
+import skinColorOptions from './avatar-options/skinColorOptions.json';
+import hairColorTypes from './avatar-options/hairColorTypes.json';
+import hatColorOptions from './avatar-options/hatColorOptions.json';
+import clotheColorOptions from './avatar-options/clotheColorOptions.json';
 
 export interface RandomAvatarProps {
   seed?: string;
@@ -20,6 +20,7 @@ export interface RandomAvatarProps {
   style?: React.CSSProperties;
   alt?: string;
   size: number;
+  onClick?(): React.MouseEventHandler<HTMLImageElement>;
 }
 
 export const RandomAvatar: React.FC<RandomAvatarProps> = ({
@@ -28,8 +29,9 @@ export const RandomAvatar: React.FC<RandomAvatarProps> = ({
   size,
   style,
   alt,
+  onClick,
 }: RandomAvatarProps) => {
-  const transparent = isTransparent ? "Transparent" : "Circle";
+  const transparent = isTransparent ? 'Transparent' : 'Circle';
 
   const rng = seed ? seedrandom(seed) : seedrandom();
 
@@ -47,6 +49,7 @@ export const RandomAvatar: React.FC<RandomAvatarProps> = ({
     <img
       style={styles}
       alt={alt}
+      onClick={onClick}
       src={`https://avataaars.io/?avatarStyle=${transparent}&accessoriesType=${
         accessoriesTypeOptions[
           Math.floor(rng() * accessoriesTypeOptions.length)
