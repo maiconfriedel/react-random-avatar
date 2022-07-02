@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -23,11 +23,6 @@
   "peerDependencies": {
     "react": ">=16"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "prettier": {
     "printWidth": 80,
     "semi": true,
@@ -36,7 +31,12 @@
   },
   "name": "react-random-avatar",
   "author": "Maicon Gabriel Friedel",
+  "description": "A library to generate random avatars components using https://getavataaars.com",
   "module": "dist/react-random-avatar.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maiconfriedel/react-random-avatar"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@size-limit/preset-small-lib": "^7.0.8",
