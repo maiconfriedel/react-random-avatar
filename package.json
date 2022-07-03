@@ -17,8 +17,8 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
-    "build-storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o ./docs"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o ./docs"
   },
   "peerDependencies": {
     "react": ">=16"
