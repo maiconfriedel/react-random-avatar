@@ -1,3 +1,5 @@
+A React component to generate awesome random avatars using https://getavataaars.com
+
 # Storybook
 Storybook avaliable at https://maiconfriedel.github.io/react-random-avatar
 
